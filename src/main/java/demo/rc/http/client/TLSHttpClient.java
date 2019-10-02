@@ -21,11 +21,11 @@ public class TLSHttpClient implements demo.rc.http.client.HttpClient{
 
 	public static void main(String[] args) throws Exception {
 
-		String PUSH_NOTIFICATION_END_POINT = "https://fm.trackhera.com/api/iam/users/user@dayrep.com";
+		String END_POINT = "https://www.one.com/api/users/test@test.com";
 		
-		logger.info(String.format("Request : %s", PUSH_NOTIFICATION_END_POINT));
+		logger.info(String.format("Request : %s", END_POINT));
 		
-		HttpGet httpGet = new HttpGet(PUSH_NOTIFICATION_END_POINT);
+		HttpGet httpGet = new HttpGet(END_POINT);
 		httpGet.addHeader("Content-Type", "application/json");
 		httpGet.addHeader("Authorization",
 				"Basic TXlNYXRjaGluZ1N5bmNVc2VyOjFuNzNTdzZ2Tzg4a01tdg==");
@@ -41,7 +41,9 @@ public class TLSHttpClient implements demo.rc.http.client.HttpClient{
 		while ((inputLine = in.readLine()) != null) {
 			response.append(inputLine);
 		}
+		
 		in.close();
+		
 		logger.info(String.format("%s : %s", resp.getStatusLine().getStatusCode(), resp.getStatusLine().getReasonPhrase()));
 		logger.info(response.toString());
 	}
