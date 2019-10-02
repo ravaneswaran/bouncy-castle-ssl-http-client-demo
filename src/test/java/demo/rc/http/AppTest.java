@@ -1,4 +1,4 @@
-package com.rc.demo;
+package demo.rc.http;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
